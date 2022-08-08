@@ -1,0 +1,413 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<HTML lang="pt">
+<HEAD>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H25M3ZFG93"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H25M3ZFG93');
+</script>
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=UTF-8"> 
+<TITLE>Análise de Algoritmos</TITLE>
+<META name="author" content="Paulo Feofiloff">
+<META name="description" content="Aulas de Análise de Algoritmos na USP.">
+<META name="keywords" content="ciência da computação, análise de algoritmos, notação assintótica, notação O, recorrências, divisão e conquista, programação dinâmica, algoritmos gulosos, algoritmos em grafos, problemas NP-completos">
+<meta name="category" content="Computação/Programação/Algoritmos/Análise/">
+<META name="language" content="Portuguese">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<LINK rel="stylesheet" type="text/css" href="style.css">
+<LINK rel="stylesheet" media="screen and (max-width:800px)" href="style-mobile.css" type="text/css">
+<LINK rel="stylesheet" media="print" href="style-print.css" type="text/css">
+<meta name="google-site-verification" content="DkHEpjRmYloz2Acafw3VYXZTblY9Ahz9rzcJxDDl_1A">
+<style type="text/css">
+BODY {
+  hyphens: none;
+  font-size: 1.05em; /*1.05 x 20px = 21px*/ 
+  word-spacing: 0.0px;
+  letter-spacing: 0.0px;
+  line-height: normal; /*this is the default*/
+}
+h1.main {
+  margin-top: 3em; 
+  color: #d05010;
+  font-size: 2.50em; /*2.5 x 20px = 50px*/
+  text-align: left;
+}
+div.large {
+  font-size: 1.05em; /*1.05 x 20px = 21px*/
+}
+li {
+  margin-top: 0.5em;
+}
+div.footer {
+  margin-bottom: 5em;
+  font-size: 0.80rem; /*0.80 x 20px = 16px*/
+}
+div.propaganda {
+  font-size: 0.8rem;
+  hyphens: none;
+  line-height: normal; /*this is the default*/
+}
+</style>
+</HEAD>
+<BODY>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="main">Análise de Algoritmos</h1>
+
+
+
+
+
+<p>&nbsp;
+<p class="epigraph">
+<q>Computer science is no more about computers<br> 
+than astronomy is about telescopes.</q>
+<p class="epigraphsignature">
+&mdash;
+<a href="https://www.cs.utexas.edu/users/EWD/welcome.html"
+><em>Edsger W. Dijkstra</em></a>
+
+
+
+
+
+
+
+
+<div class="large">
+
+
+
+
+
+
+
+
+<p>
+A <a href="https://en.wikipedia.org/wiki/Analysis_of_algorithms"
+>análise de algoritmos</a> estuda a correção e o desempenho de 
+
+
+<a href="aulas/dictionary.html#algoritmo"
+>algoritmos</a>.&nbsp;
+Em outras palavras,
+a análise de algoritmos procura respostas
+para perguntas do seguinte tipo:&nbsp;
+<q>Este algoritmo resolve o meu problema?&nbsp;
+Quanto tempo
+o algoritmo consome para processar
+uma 'entrada' de tamanho&nbsp;<var>n</var>?</q>&nbsp;
+(A&nbsp;resposta à segunda pergunta é
+necessariamente um tanto grosseira,
+algo como
+<q>o&nbsp;consumo de tempo é proporcional
+a&nbsp;<var>n</var>&sup2;&nbsp;log&nbsp;<var>n</var>
+no pior caso</q>.)
+
+
+
+
+
+<p>
+Além disso, a análise de algoritmos estuda certos paradigmas
+
+(como
+divisão e conquista,
+programação dinâmica,
+gula,
+busca local,
+aproximação,
+etc.)
+que se mostraram úteis na criação
+de algoritmos para diversos problemas computacionais.
+
+
+
+
+
+
+<p>
+A análise de algoritmos foi inventada e difundida por D.E.&nbsp;Knuth
+(veja a série de livros <a href="bib.html#Knuth-v1"
+><cite>The Art of Computer Programming</cite></a>).
+Knuth foi o pai da
+
+ideia de prever o tempo de execução
+e o consumo de espaço de um algoritmo.
+
+
+
+
+
+
+
+<h2>Material didático</h2>
+
+
+<ul>
+
+<li>
+<a href="lectures.html">Aulas de Análise de Algoritmos</a>
+
+<li>
+<a href="aulas/dictionary.html">Dicionário de termos técnicos</a>
+
+<li>
+<a href="aulas/indice.html">Índice remissivo</a>
+
+
+
+
+
+<li>
+
+<a href="https://www.ime.usp.br/~pf/livrinho-AA/"
+>Livrinho <q>Minicurso de Análise de Algoritmos</q></a>
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+<h2>Material de apoio</h2>
+
+
+<ul>
+
+<li>
+<a href="bib.html">Alguns livros</a>
+
+<li>
+<a href="sites.html">Alguns recursos na rede WWW</a>
+
+<li>
+
+
+<a href="repository/AA-EXERCICIOS.pdf" target="_blank"
+  onClick="_gaq.push(['_trackEvent', 'Download', 'PDF', this.href]);" 
+>Repositório de exercícios de Análise de Algoritmos</a>
+
+
+
+
+
+
+<li class="">
+Wikipedia: <a href="https://en.wikipedia.org/wiki/List_of_terms_relating_to_algorithms_and_data_structures"
+>List of terms relating to algorithms and data structures</a>
+
+
+
+<li>
+<a href="quotations.html">O que eles dizem</a>:
+citações relativas a algoritmos e sua análise
+
+</ul>
+
+
+
+
+
+<div class="clear"></div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+<hr>
+<p>
+<a href="https://www.ime.usp.br/~pf/mac0338-apresentacao/2021-04-30.mp4"
+>Vídeo de apresentação da disciplina MAC0338 (2021)</a>
+
+<hr>
+<p>
+<a href="https://www.youtube.com/watch?v=c2RnPIvjWqc"
+>Vídeo de apresentação da disciplina MAC0338 (2012)</a>
+
+
+<hr>
+<p>
+Quora:
+<q><a href="https://www.quora.com/Is-the-study-of-algorithms-relevant-to-todays-development"
+>Is the study of algorithms relevant to today's development?</a></q>
+
+<hr>
+<p class="nw">
+www.ime.usp.br/~pf/analise_de_algoritmos/<br>
+Atualizado em 2015-04-13<br>
+<em>Paulo Feofiloff</em><br>
+<a href="https://www.ime.usp.br/dcc/"
+>Departamento de Ciência da Computação</a><br>
+<a href="https://www.ime.usp.br/"
+>Instituto de Matemática e Estatística</a> da
+<a href="https://www.usp.br/"
+><abbr title="Universidade de São Paulo">USP</abbr></a>
+
+
+
+<p>&nbsp;
+
+<p>Busca no sítio analise_de_algoritmos<br>
+
+
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="012984488421677236406:5qlicc406ve">
+    <input type="hidden" name="ie" value="UTF-8">
+    <input type="text" name="q" size="31">
+    <input type="submit" name="sa" value="Pesquisar">
+  </div>
+</form>
+<script type="text/javascript" src="https://www.gstatic.com/prose/brandjs.js"></script>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="propaganda">
+<p>Outros assuntos:&nbsp;&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/algoritmos/"
+  >Projeto de Algoritmos em&nbsp;C</a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/algoritmos-livro/"
+  >Livro <q>Algoritmos em&nbsp;C</q></a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/mac0122-2002/"
+  >Desenvolvimento de Algoritmos</a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/estruturas-de-dados/"
+  >Estruturas de Dados</a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/CWEB/"
+  >Literate Programming&nbsp;&amp; CWEB</a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/amostra-de-prova/"
+  >O&nbsp;que&nbsp;é uma prova?</a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/teoriadosgrafos/"
+  >Uma Introdução Sucinta à Teoria dos Grafos</a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/grafos-exercicios/"
+  >Exercícios de Teoria dos Grafos</a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/graph-exercises/"
+  >Graph Theory Exercises</a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/digraphs/"
+  >Digrafos</a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/algoritmos_em_grafos/"
+  >Algoritmos em Grafos com Stanford GraphBase</a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/algoritmos_para_grafos/"
+  >Algoritmos para Grafos via Sedgewick</a>&nbsp;&nbsp;|&nbsp;
+
+
+
+<a href="https://www.ime.usp.br/~pf/livrinho-AA/"
+  >Minicurso de Análise de Algoritmos</a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/prog-lin/"
+  >Algoritmos de Programação Linear</a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/otimizacao-combinatoria/"
+  >Otimização Combinatória</a>&nbsp;&nbsp;|&nbsp;
+
+<a href="https://www.ime.usp.br/~pf/mac5727-2003/"
+  >Algoritmos de Aproximação</a>
+
+
+
+</div>
+
+
+
+
+
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+
+</BODY>
+</HTML>
