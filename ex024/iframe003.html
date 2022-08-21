@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de Iframes</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        iframe {
+            width: 95vw;
+            height: 400px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Faça uma escolha</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae quos asperiores unde corrupti reiciendis ad dignissimos voluptate aperiam voluptatum odio, sint non eos temporibus assumenda, cum, veniam illo? Magnam, perferendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque molestias nulla delectus, cupiditate ab magnam non nam odio est explicabo minima, rerum adipisci culpa! Quam, expedita? Et suscipit aperiam explicabo.</p>
+
+    <ul>
+        <li> <a href="paginasextras/pagina001.html" target="frame">Primeira Página</a></li>
+        <li> <a href="paginasextras/pagina002.html" target="frame">Segunda Página</a></li>
+        <li> <a href="paginasextras/pagina003.html" target="frame">Terceira Página</a></li>
+    </ul>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, odit minima? Dolorem, voluptatum veritatis? Labore, beatae dicta voluptates cumque non quam vel autem, sed cum unde numquam? Mollitia, eligendi aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente error repudiandae neque tenetur similique aliquid, odit voluptatem placeat soluta possimus incidunt adipisci perferendis amet rerum quam esse blanditiis magni molestias? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptas commodi distinctio quam beatae harum reprehenderit quos molestias quas animi, ullam repudiandae tenetur ipsam! Odit laudantium nesciunt mollitia commodi ut!</p>
+
+    <iframe name="frame" srcdoc="<h1>Escolha uma das opções acima<h1>">
+        <p>Infelizmente seu navegador não é compativel com isso</p>
+    </iframe>
+</body>
+</html>
